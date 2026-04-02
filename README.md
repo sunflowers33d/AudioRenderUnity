@@ -1,16 +1,16 @@
 # AudioRenderUnity
 A wrapper for tikonen's [AudioRender](https://github.com/tikonen/AudioRender) X/Y oscilloscope image drawing library to work with 3D Unity projects. Works best with analog oscilloscopes.
 
-![A spinning grey cube in a Unity scene.](/images/Cube_Unity.gif)
-![The same spinning cube in osci-render, a simulated X/Y oscilloscope.](/images/Cube_CXaudio.gif)
-![An animated mushroom in a Unity scene.](/images/Mushroom_Unity.gif)
-![The same animated mushroom as X/Y oscilloscope data.](/images/Mushroom_CXAudio.gif)
+![A spinning grey cube in a Unity scene.](https://raw.githubusercontent.com/sunflowers33d/AudioRenderUnity/refs/heads/master/images/Cube_Unity.gif)
+![The same spinning cube in osci-render, a simulated X/Y oscilloscope.](https://raw.githubusercontent.com/sunflowers33d/AudioRenderUnity/refs/heads/master/images/Cube_CXAudio.gif)
+![An animated mushroom in a Unity scene.](https://raw.githubusercontent.com/sunflowers33d/AudioRenderUnity/refs/heads/master/images/Mushroom_Unity.gif)
+![The same animated mushroom as X/Y oscilloscope data.](https://raw.githubusercontent.com/sunflowers33d/AudioRenderUnity/refs/heads/master/images/Mushroom_CXaudio.gif)
 
 ## IMPORTANT: Your audio output matters!
 It is essential that the sound device sending the X/Y audio data to your oscilloscope is **DC-coupled**, as the audio data this project generates will have moments where the signal will suddenly stop. AC-coupled DACs tend to "smooth" out the end of an abrupt waveform in a way that significantly distorts the resultant oscilloscope image.
 *TL;DR: please don't just use your computer's built-in sound card, it won't go well...!*
 
-![The same spinning cube, routed through a Realtek built-in sound device.](/images/Cube_RealtekAudio.gif)
+![The same spinning cube, routed through a Realtek built-in sound device.](https://raw.githubusercontent.com/sunflowers33d/AudioRenderUnity/refs/heads/master/images/Cube_RealtekAudio.gif)
 
 I have had success using CX31993-based USB-C dongles, though the developer of AudioRender has [made their own purpose-based solution](https://github.com/tikonen/DACDriver) with an STM32F407-DISCOVERY1 which may be more favorable.
 

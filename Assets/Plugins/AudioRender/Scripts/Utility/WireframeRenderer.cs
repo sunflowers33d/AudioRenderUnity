@@ -37,6 +37,8 @@ namespace AudioRender
         [Header("Y scale of the rendering. (Audio only)")]
         [SerializeField] private float scaleY = -2.0f;
         [Header("Intensity (in other words brightness or width) of the lines.")]
+		[Header("Higher values cause less ringing.")]
+		[Header("Too high values result in FPS drop.")]
         [SerializeField] private float intensity = 0.35f;
         [Header("Random distance added to each line.")]
         public float randomOffset = 0.0f;

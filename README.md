@@ -17,7 +17,7 @@ I have had success using CX31993-based USB-C dongles, though the developer of Au
 ## How do I use this in Unity?
 1. Clone this repository into a folder where you intend to build off of in Unity. The example project in this repo is from Unity 2021.1, though it can be upgraded to 2022.3.62f3 without issue. *Unity 6 has not yet been tested*.
 2. Place any 3D GameObjects under the **Wireframe Renderer**, ensuring that the *Render Device Type* is set to your intended option.
-    1. Audio: send your 3D scene and objects as X/Y audio data to send to a real analog oscilloscope or a simulated analog oscilloscope. *While digital oscilloscopes will technically work, the latency and slow update timing may not be ideal.*
+    1. Audio: send your 3D scene and objects as X/Y audio data to send to a real analog oscilloscope or a simulated analog oscilloscope. *While digital oscilloscopes will technically work, the latency and slow update timing may not be ideal. Increasing the Intensity value helps combat ringing/overshooting on lines.*
     2. Emulator: send 3D scene as wireframe data to the oscilloscope "emulator" contained within AudioRenderCAPI.
     3. Gfx: replace every 3D object inside of **Wireframe Renderer** with an oscilloscope-style wireframe shader.
 
@@ -33,9 +33,9 @@ If you are not using the pre-made Unity project, ensure that the following is tr
     - Open Run (Win + R), enter <code>mmsys.cpl</code>, click the desired oscilloscope audio output device and then press **Set Default**.
 
 ## Features
- - Audio rendering (oscilloscope)
- - Emulator renderer (external included program)
- - Shader rendering (Unity)
+ - Realtime wireframe to X/Y audio output
+ - Emulator renderer (included with AudioRender)
+ - Oscilloscope-like wireframe line shader
  - Signal scaling (for oscilloscopes)
  - Signal intensity
  - Global random line offset
@@ -56,7 +56,7 @@ If you are not using the pre-made Unity project, ensure that the following is tr
 
 ## Performance Tips
  - Try to keep line count as low as possible.
- - Do not split model edges, as this doubles the line count (use smooth faces).
+ - Do not split model edges, as this doubles the line count. Use smooth faces on models.
  - Use high edge angle limits on wireframe objects to skip lines in geometry.
  - Break static geomery into small sections for baked occlusion culling.
  - Keep camera far clipping plane as low as possible.
